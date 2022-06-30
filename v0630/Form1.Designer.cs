@@ -44,7 +44,7 @@ namespace v0630
             this.label1.Size = new System.Drawing.Size(32, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "★";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // label2
             // 
@@ -55,7 +55,7 @@ namespace v0630
             this.label2.Size = new System.Drawing.Size(83, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "(・ω・)";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // timer1
             // 
