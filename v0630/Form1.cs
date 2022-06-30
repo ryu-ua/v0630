@@ -27,14 +27,14 @@ namespace v0630
         {
             InitializeComponent();
 
-            label1.Left = rand.Next(ClientSize.Width-label1.Left);
-            label1.Top = rand.Next(ClientSize.Height-label1.Top);
+            label1.Left = rand.Next(ClientSize.Width-label1.Width);
+            label1.Top = rand.Next(ClientSize.Height-label1.Height);
 
-            label3.Left = rand.Next(ClientSize.Width - label3.Left);
-            label3.Top = rand.Next(ClientSize.Height - label3.Top);
+            label3.Left = rand.Next(ClientSize.Width - label3.Width);
+            label3.Top = rand.Next(ClientSize.Height - label3.Height);
 
-            label4.Left = rand.Next(ClientSize.Width - label4.Left);
-            label4.Top = rand.Next(ClientSize.Height - label4.Top);
+            label4.Left = rand.Next(ClientSize.Width - label4.Width);
+            label4.Top = rand.Next(ClientSize.Height - label4.Height);
 
         }
 
@@ -48,10 +48,7 @@ namespace v0630
 
             label1.Left += vx;
             label1.Top += vy;
-            label3.Left += sx;
-            label3.Top += sy;
-            label4.Left += cx;
-            label4.Top += cy;
+          
 
             if (label1.Left < 0)
             {
@@ -73,53 +70,74 @@ namespace v0630
             {
                 vy = -Math.Abs(vy) * 110 / 100;
             }
-
+            
+            if ((fpos.X >= label1.Left)
+           && (fpos.X < label1.Right)
+           && (fpos.Y >= label1.Top)
+           && (fpos.Y < label1.Bottom))
+            {
+                timer1.Enabled = false;
+            }
+            
+            label3.Left += sx;
+            label3.Top += sy;
             if (label3.Left < 0)
             {
-                vx = Math.Abs(vx) * 110 / 100;
+                sx = Math.Abs(sx) * 110 / 100;
             }
 
             if (label3.Top < 0)
             {
-                vy = Math.Abs(vy) * 110 / 100;
+                sy = Math.Abs(sy) * 110 / 100;
             }
 
 
             if (label3.Right > ClientSize.Width)
             {
-                vx = -Math.Abs(vx) * 110 / 100;
+                sx = -Math.Abs(sx) * 110 / 100;
             }
 
             if (label3.Bottom > ClientSize.Height)
             {
-                vy = -Math.Abs(vy) * 110 / 100;
+                sy = -Math.Abs(sy) * 110 / 100;
             }
 
+            if ((fpos.X >= label3.Left)
+           && (fpos.X < label3.Right)
+           && (fpos.Y >= label3.Top)
+           && (fpos.Y < label3.Bottom))
+            {
+                timer1.Enabled = false;
+            }
+
+
+            label4.Left += cx;
+            label4.Top += cy;
             if (label4.Left < 0)
             {
-                vx = Math.Abs(vx) * 110 / 100;
+                cx = Math.Abs(cx) * 110 / 100;
             }
 
             if (label4.Top < 0)
             {
-                vy = Math.Abs(vy) * 110 / 100;
+                cy = Math.Abs(cy) * 110 / 100;
             }
 
 
             if (label4.Right > ClientSize.Width)
             {
-                vx = -Math.Abs(vx) * 110 / 100;
+                cx = -Math.Abs(cx) * 110 / 100;
             }
 
             if (label4.Bottom > ClientSize.Height)
             {
-                vy = -Math.Abs(vy) * 110 / 100;
+                cy = -Math.Abs(cy) * 110 / 100;
             }
 
-            if ((fpos.X >= label1.Left)
-             && (fpos.X < label1.Right)
-             && (fpos.Y >= label1.Top)
-             && (fpos.Y < label1.Bottom))
+            if ((fpos.X >= label4.Left)
+             && (fpos.X < label4.Right)
+             && (fpos.Y >= label4.Top)
+             && (fpos.Y < label4.Bottom))
             {
                 timer1.Enabled = false;
             }
