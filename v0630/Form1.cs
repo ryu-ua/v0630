@@ -14,6 +14,12 @@ namespace v0630
     {
         int vx = rand.Next(-10,11);
         int vy = rand.Next(-10,11);
+
+        int sx = rand.Next(-10, 11);
+        int sy = rand.Next(-10, 11);
+
+        int cx = rand.Next(-10, 11);
+        int cy = rand.Next(-10, 11);
         //静的＝最初に決めておく　<>　動的＝実行時に変更可能
         static Random rand = new Random();
 
@@ -21,8 +27,14 @@ namespace v0630
         {
             InitializeComponent();
 
-            label1.Left = rand.Next(0,ClientSize.Width);
-            label1.Top = rand.Next(0,ClientSize.Height);
+            label1.Left = rand.Next(ClientSize.Width-label1.Left);
+            label1.Top = rand.Next(ClientSize.Height-label1.Top);
+
+            label3.Left = rand.Next(ClientSize.Width - label3.Left);
+            label3.Top = rand.Next(ClientSize.Height - label3.Top);
+
+            label4.Left = rand.Next(ClientSize.Width - label4.Left);
+            label4.Top = rand.Next(ClientSize.Height - label4.Top);
 
         }
 
@@ -36,6 +48,10 @@ namespace v0630
 
             label1.Left += vx;
             label1.Top += vy;
+            label3.Left += sx;
+            label3.Top += sy;
+            label4.Left += cx;
+            label4.Top += cy;
 
             if (label1.Left < 0)
             {
@@ -58,6 +74,48 @@ namespace v0630
                 vy = -Math.Abs(vy) * 110 / 100;
             }
 
+            if (label3.Left < 0)
+            {
+                vx = Math.Abs(vx) * 110 / 100;
+            }
+
+            if (label3.Top < 0)
+            {
+                vy = Math.Abs(vy) * 110 / 100;
+            }
+
+
+            if (label3.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx) * 110 / 100;
+            }
+
+            if (label3.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy) * 110 / 100;
+            }
+
+            if (label4.Left < 0)
+            {
+                vx = Math.Abs(vx) * 110 / 100;
+            }
+
+            if (label4.Top < 0)
+            {
+                vy = Math.Abs(vy) * 110 / 100;
+            }
+
+
+            if (label4.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx) * 110 / 100;
+            }
+
+            if (label4.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy) * 110 / 100;
+            }
+
             if ((fpos.X >= label1.Left)
              && (fpos.X < label1.Right)
              && (fpos.Y >= label1.Top)
@@ -65,6 +123,16 @@ namespace v0630
             {
                 timer1.Enabled = false;
             }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }
