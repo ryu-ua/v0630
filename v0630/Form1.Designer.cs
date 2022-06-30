@@ -44,7 +44,6 @@ namespace v0630
             this.label1.Size = new System.Drawing.Size(32, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "★";
-            
             // 
             // label2
             // 
@@ -55,7 +54,6 @@ namespace v0630
             this.label2.Size = new System.Drawing.Size(83, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "(・ω・)";
-           
             // 
             // timer1
             // 
@@ -66,7 +64,7 @@ namespace v0630
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(356, 316);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";

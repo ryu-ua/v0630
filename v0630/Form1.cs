@@ -21,8 +21,8 @@ namespace v0630
         {
             InitializeComponent();
 
-            label1.Left = rand.Next(ClientSize.Width);
-            label1.Top = rand.Next(ClientSize.Height);
+            label1.Left = rand.Next(0,ClientSize.Width);
+            label1.Top = rand.Next(0,ClientSize.Height);
 
         }
 
